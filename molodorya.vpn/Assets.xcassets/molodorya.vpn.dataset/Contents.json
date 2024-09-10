@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "filename" : "vpn-ios-or-mac.mobileconfig",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

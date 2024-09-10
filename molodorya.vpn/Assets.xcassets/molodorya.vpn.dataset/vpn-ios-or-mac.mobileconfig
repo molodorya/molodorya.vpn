@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE plist PUBLIC '-//Apple//DTD PLIST 1.0//EN' 'http://www.apple.com/DTDs/PropertyList-1.0.dtd'>
+<plist version='1.0'>
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>IKEv2</key>
+      <dict>
+        <key>AuthenticationMethod</key>
+        <string>None</string>
+        <key>ChildSecurityAssociationParameters</key>
+        <dict>
+          <key>EncryptionAlgorithm</key>
+          <string>AES-256-GCM</string>
+          <key>IntegrityAlgorithm</key>
+          <string>SHA2-384</string>
+          <key>DiffieHellmanGroup</key>
+          <integer>20</integer>
+          <key>LifeTimeInMinutes</key>
+          <integer>1440</integer>
+        </dict>
+        <key>DeadPeerDetectionRate</key>
+        <string>Medium</string>
+        <key>DisableMOBIKE</key>
+        <integer>0</integer>
+        <key>DisableRedirect</key>
+        <integer>0</integer>
+        <key>EnableCertificateRevocationCheck</key>
+        <integer>0</integer>
+        <key>EnablePFS</key>
+        <true/>
+        <key>ExtendedAuthEnabled</key>
+        <true/>
+        <key>IKESecurityAssociationParameters</key>
+        <dict>
+          <key>EncryptionAlgorithm</key>
+          <string>AES-256-GCM</string>
+          <key>IntegrityAlgorithm</key>
+          <string>SHA2-384</string>
+          <key>DiffieHellmanGroup</key>
+          <integer>20</integer>
+          <key>LifeTimeInMinutes</key>
+          <integer>1440</integer>
+        </dict>
+        <key>OnDemandEnabled</key>
+        <integer>1</integer>
+        <key>OnDemandRules</key>
+        <array>
+          <dict>
+            <key>Action</key>
+            <string>Connect</string>
+          </dict>
+        </array>
+        <key>RemoteAddress</key>
+        <string>194.135.22.25</string>
+        <key>RemoteIdentifier</key>
+        <string>194.135.22.25</string>
+        <key>UseConfigurationAttributeInternalIPSubnet</key>
+        <integer>0</integer>
+      </dict>
+      <key>IPv4</key>
+      <dict>
+        <key>OverridePrimary</key>
+        <integer>1</integer>
+      </dict>
+      <key>PayloadDescription</key>
+      <string>Configures VPN settings</string>
+      <key>PayloadDisplayName</key>
+      <string>VPN</string>
+      <key>PayloadIdentifier</key>
+      <string>com.apple.vpn.managed.851838db-d48e-4884-b113-ad2a355a0c70</string>
+      <key>PayloadType</key>
+      <string>com.apple.vpn.managed</string>
+      <key>PayloadUUID</key>
+      <string>851838db-d48e-4884-b113-ad2a355a0c70</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>Proxies</key>
+      <dict>
+        <key>HTTPEnable</key>
+        <integer>0</integer>
+        <key>HTTPSEnable</key>
+        <integer>0</integer>
+      </dict>
+      <key>UserDefinedName</key>
+      <string>VPN on 194.135.22.25</string>
+      <key>VPNType</key>
+      <string>IKEv2</string>
+    </dict>
+    <dict>
+      <key>PayloadDisplayName</key>
+      <string>Server CA</string>
+      <key>PayloadDescription</key>
+      <string>Add CA root certificate</string>
+      <key>PayloadCertificateFileName</key>
+      <string>ca_cert.pem</string>
+      <key>PayloadContent</key>
+      <data>
+LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZFakNDQXZxZ0F3SUJBZ0lJR1REVktoWTQ0MkF3RFFZSktvWklodmNOQVFFTUJRQXdKekVsTUNNR0ExVUUKQXhNY2RuQnVJRzl1SURFNU5DNHhNelV1TWpJdU1qVWdjbTl2ZENCallUQWVGdzB5TkRBNU1ERXdOalV6TlRGYQpGdzB6TkRBNE16QXdOalV6TlRGYU1DY3hKVEFqQmdOVkJBTVRISFp3YmlCdmJpQXhPVFF1TVRNMUxqSXlMakkxCklISnZiM1FnWTJFd2dnSWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUNEd0F3Z2dJS0FvSUNBUURuNUFGU2gvcU8KOTNrZGRta3hUS1hGSXorT1lkSjYydURHYjUwZnY5ZnJrN240emRZOXdkZVZsQmdZY3pnaE5QTDBYWmYreXlYZwpRTUVlSXBZbko0QWFXNlZWS1V5cmk1Qm9Eb2trT3cxdVp4SmR6dmlGcFBaclgrTzdmMklQaTJab0Z3UmhWc3crCllHblBwN2l6REk1Z1REbmtkNG91dG9ISVUvdkpjUTlUUUZwS1FFVlpYYllQRWtvalRYMGtJdVZHNjVvVVpEOHkKcFYrUC9uU0RuZzZ5STQ4SGFhSjlPSG5vSUZKbFVsaXNwc0pzelNJQzFwVE83T3Zqa1NWb3Y3MXcwaEhpVndqdwpCdWdrTkxVOGpHMnpHN3puV2k5WS9FZCs4RUlZVjZrMnZwcGtNbjBEaTBhaStCb1lSSnFvZVc4VWlwL2pZOHVJCnN0d01sMGZqc1BKdzRsSCtJbm9IVGhZYVkwL0pJaW9VVEpNdnFrVkZKMThrdFVITlJsRW8wRVllVWhYbkcrTW4KRGZaMEpnejluUE1na1hSd0gvM3FkV2hqbHplbGxXOWN3Q3U3ZVpsZG14UHJLc1VIOVN1ZjJLUStPQzRiN3JLaQpBMXNqVFRSY1NEc3R0ZkxGUDEwUGhzRjlWR0xnT211MHd5OGZTVm16bFB3N2YwaHMrWXBvbWlnZzhjaHFObzVZCktkYTZ0a0ZFRmlvMHdBMEg5MFpDNHZRQzZiTFNYVWx6cmJGWkFOaTFUUzcvOXJSTEVya0NvUkRLTUVZcDA3ajgKYVpkYklQYThhT1JtMWliOFF2RTZtMjVrVDQ0K2RCOWtQZm9GMkRnd2F0SXpmZThXU214Y0hYeXJ3TWQ0WE5CWgoyUnkwVW42c0tOY2I5cncrZ1BDTDNYM1NJM0xibGNJVWZ3SURBUUFCbzBJd1FEQVBCZ05WSFJNQkFmOEVCVEFECkFRSC9NQTRHQTFVZER3RUIvd1FFQXdJQkJqQWRCZ05WSFE0RUZnUVV1a0VIUm1uTXFHeG9kenN3eDJNZGpnU0EKQ3Iwd0RRWUpLb1pJaHZjTkFRRU1CUUFEZ2dJQkFPSFFpc0RKcmhZelEyNEpBcmgzK25Vd1g3THJYQ3kxQ3RGegpIcVlqbm9tZXVtWVNyZVpORkt2K1ZYNDZXMXU5VGVPK0x6YjBGMmtmMjRzdGVMNU1iVjl2RkJDS1B1Nklpay9QCnczWVd6RVBYOFpUNVFTTHM4d01yOXpsYTJiMThiZDhITHJZeGVRQnBpZ3pOckd1dk9nb1VpajlhNnVpbytXZWQKU1VKM0hkT00yMjF4cmdkOWNkWXBybTdOd1F0VXYzenErUkxtemszZjJHV0xyVUlYTjBDUTB2MTh6MUhReExvNQpVaWMvZ1p4V2JqTWwrazFoamVOWU1zKzhrTjFxeEIvdk1qZHo3WVlDTVAzS0lFL2NkNkVtM0tPWVRQTm1OUFVBCmJRZ0tXRVpBMUhnYTh1N0ZKaTAxV1pEV1RJTFlud1F1RmxBMFlFQ2p3OUZiT0ovWkZzejg1bm9wNWVIcXJ0Z2oKUWZYTUhyZXBYemFDNXNleXFJSWVzc0NvNS9URzRDMENVQ01SWjZ0dWxYd25VVjNDem5SaWdRUm5RNUx3M3dqMgpybEh6ZHdRaHBLNjdlN0pWcml5V3V5WW53Q2dqZ3Z6UVVZdU9WTm92Y3N2V2x0c1crZUs0ZXc2OVgxaXhmSXdQCm5lbjRjUVZIakZ6OGRnVkxhVzRPWFdkek05Z3pXOFdOK0poTzY2bk9pRU02b0tUUzVieUpWc2h6eGZFRnhzZ3cKMlNMKzZxZFQxSjMrM3Z5NzhxeDB3dElqSDZSYTZ5WHU0UCtqb2hFeWNyVE9MVlNnRWxVQ1A3YURJclhGbjNwMgpJNkZodFczRkY3c08zeU1UWkVHSUFuaDlYd21NYzBKakpzeDFYVys1QzB4K0ttOGo3TVdBZVQwRDM3bmw1VzRECm00UW11Qy9MCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+      </data>
+      <key>PayloadType</key>
+      <string>com.apple.security.root</string>
+      <key>PayloadIdentifier</key>
+      <string>com.apple.security.root.d8ea33ce-1723-482a-b819-9769fe085766</string>
+      <key>PayloadUUID</key>
+      <string>d8ea33ce-1723-482a-b819-9769fe085766</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+    </dict>
+  </array>
+  <key>PayloadDisplayName</key>
+  <string>VPN on 194.135.22.25</string>
+  <key>PayloadIdentifier</key>
+  <string>com.mackerron.vpn.975043b0-1b95-42af-97ce-34093fc003c2</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>975043b0-1b95-42af-97ce-34093fc003c2</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+</dict>
+</plist>
