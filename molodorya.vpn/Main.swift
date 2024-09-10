@@ -9,6 +9,8 @@ import UIKit
 
 class Main: UIViewController {
     
+     
+    
     var servers = [
         ["Russia", "Finland", "UAE"],
         ["0.0.0.0", "1.1.1.1", "2.2.2.2"]
@@ -22,9 +24,13 @@ class Main: UIViewController {
         super.viewDidLoad()
         
         vpnStart.layer.cornerRadius = 15
-        tableView.rowHeight = 70
         
-        title = ""
+        tableView.rowHeight = 70
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        title = "Molodorya.VPN"
+        navigationController?.navigationBar.prefersLargeTitles = true
        
     }
     
@@ -32,6 +38,8 @@ class Main: UIViewController {
     
     @IBAction func startVPN(_ sender: UIButton) {
         
+        
+        VPNIKEv2Setup.shared.initVPNTunnelProviderManager()
 
 
     }

@@ -1,24 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wvZ-DQ-Cq0">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="Main" customModule="molodorya_vpn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOC-rz-kSP">
+                                <rect key="frame" x="15" y="726" width="363" height="52"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="00L-vw-LoT"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Запустить VPN">
+                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="startVPN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tjj-aG-tho"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8P2-8t-8g5">
+                                <rect key="frame" x="0.0" y="103" width="393" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="cIE-0I-UUT"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="main" id="vlO-Ge-N93" customClass="MainCell" customModule="molodorya_vpn" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vlO-Ge-N93" id="0IU-L0-7QT">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ib7-Co-RJq">
+                                                    <rect key="frame" x="15" y="10" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="QEg-iM-7Z6"/>
+                                                        <constraint firstAttribute="height" constant="50" id="dro-UA-8Y6"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTD-7q-o00">
+                                                    <rect key="frame" x="80" y="11" width="209" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9S-6z-ELs">
+                                                    <rect key="frame" x="80" y="37" width="209" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OQV-eH-d5L">
+                                                    <rect key="frame" x="309" y="19.666666666666671" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="b9S-6z-ELs" firstAttribute="top" secondItem="sTD-7q-o00" secondAttribute="bottom" constant="5" id="8Yy-2Z-0Db"/>
+                                                <constraint firstItem="OQV-eH-d5L" firstAttribute="leading" secondItem="sTD-7q-o00" secondAttribute="trailing" constant="20" id="BFr-No-tR3"/>
+                                                <constraint firstItem="sTD-7q-o00" firstAttribute="leading" secondItem="ib7-Co-RJq" secondAttribute="trailing" constant="15" id="FTi-H4-g4g"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="OQV-eH-d5L" secondAttribute="trailing" constant="15" id="Ms1-Jb-Xmp"/>
+                                                <constraint firstItem="OQV-eH-d5L" firstAttribute="leading" secondItem="b9S-6z-ELs" secondAttribute="trailing" constant="20" id="Shv-Dm-5Hf"/>
+                                                <constraint firstItem="OQV-eH-d5L" firstAttribute="centerY" secondItem="0IU-L0-7QT" secondAttribute="centerY" id="Z9z-4d-AMY"/>
+                                                <constraint firstItem="ib7-Co-RJq" firstAttribute="leading" secondItem="0IU-L0-7QT" secondAttribute="leading" constant="15" id="b4O-Om-2Ad"/>
+                                                <constraint firstItem="b9S-6z-ELs" firstAttribute="leading" secondItem="ib7-Co-RJq" secondAttribute="trailing" constant="15" id="f3H-0w-LFw"/>
+                                                <constraint firstItem="sTD-7q-o00" firstAttribute="top" secondItem="0IU-L0-7QT" secondAttribute="topMargin" id="lOz-SV-cgW"/>
+                                                <constraint firstItem="ib7-Co-RJq" firstAttribute="centerY" secondItem="0IU-L0-7QT" secondAttribute="centerY" id="qk0-pI-vlX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="city" destination="b9S-6z-ELs" id="nP3-4p-maX"/>
+                                            <outlet property="country" destination="sTD-7q-o00" id="Prm-10-kdV"/>
+                                            <outlet property="onVPN" destination="OQV-eH-d5L" id="41l-bi-98b"/>
+                                            <outlet property="picture" destination="ib7-Co-RJq" id="rpD-SV-Qxf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8P2-8t-8g5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4u1-eo-Rwo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TOC-rz-kSP" secondAttribute="trailing" constant="15" id="AWn-Iy-qZ1"/>
+                            <constraint firstItem="8P2-8t-8g5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PUD-Jj-V7j"/>
+                            <constraint firstItem="TOC-rz-kSP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="Ujw-rV-qPQ"/>
+                            <constraint firstAttribute="trailing" secondItem="8P2-8t-8g5" secondAttribute="trailing" id="V2D-oc-tAc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TOC-rz-kSP" secondAttribute="bottom" constant="40" id="vUu-a2-zJ8"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="vOW-Og-F8n"/>
+                    <connections>
+                        <outlet property="tableView" destination="8P2-8t-8g5" id="3Jh-0m-M5q"/>
+                        <outlet property="vpnStart" destination="TOC-rz-kSP" id="IK7-fF-RcO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1066.4122137404579" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2kd-EE-6t2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wvZ-DQ-Cq0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RC6-0V-tuz">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Osi-Yu-vkc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wea-Mp-1es" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
