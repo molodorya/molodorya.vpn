@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E209B722C92DA2200BA727D /* Subscribers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E209B712C92DA2200BA727D /* Subscribers.swift */; };
+		4E209B752C92DB8200BA727D /* SubscribeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E209B742C92DB8200BA727D /* SubscribeCell.swift */; };
 		4E3983762C88CF30001346C5 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3983752C88CF30001346C5 /* MainCell.swift */; };
 		4E3983782C88D029001346C5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3983772C88D029001346C5 /* Extensions.swift */; };
 		4E56EEB62C846C71004E28EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56EEB52C846C71004E28EC /* AppDelegate.swift */; };
@@ -16,9 +18,13 @@
 		4E56EEBF2C846C73004E28EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E56EEBE2C846C73004E28EC /* Assets.xcassets */; };
 		4E56EEC22C846C73004E28EC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4E56EEC12C846C73004E28EC /* Base */; };
 		4E56EECA2C84FDA2004E28EC /* VPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56EEC92C84FDA2004E28EC /* VPN.swift */; };
+		4E7661A92C946F470018B32D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7661A82C946F470018B32D /* StoreKit.framework */; };
+		4ED9757C2C94ECDE0054697E /* OnBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED9757B2C94ECDE0054697E /* OnBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E209B712C92DA2200BA727D /* Subscribers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscribers.swift; sourceTree = "<group>"; };
+		4E209B742C92DB8200BA727D /* SubscribeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeCell.swift; sourceTree = "<group>"; };
 		4E3910412C90A440007C58AD /* molodorya.vpn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = molodorya.vpn.entitlements; sourceTree = "<group>"; };
 		4E3983752C88CF30001346C5 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		4E3983772C88D029001346C5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -31,6 +37,8 @@
 		4E56EEC12C846C73004E28EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E56EEC32C846C73004E28EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E56EEC92C84FDA2004E28EC /* VPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPN.swift; sourceTree = "<group>"; };
+		4E7661A82C946F470018B32D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4ED9757B2C94ECDE0054697E /* OnBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,17 +46,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7661A92C946F470018B32D /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E209B732C92DB4C00BA727D /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+				4E209B712C92DA2200BA727D /* Subscribers.swift */,
+				4E209B742C92DB8200BA727D /* SubscribeCell.swift */,
+			);
+			path = Subscribe;
+			sourceTree = "<group>";
+		};
 		4E56EEA92C846C71004E28EC = {
 			isa = PBXGroup;
 			children = (
 				4E56EEB42C846C71004E28EC /* molodorya.vpn */,
 				4E56EEB32C846C71004E28EC /* Products */,
+				4E7661A72C946F470018B32D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,19 +82,29 @@
 		4E56EEB42C846C71004E28EC /* molodorya.vpn */ = {
 			isa = PBXGroup;
 			children = (
-				4E3910412C90A440007C58AD /* molodorya.vpn.entitlements */,
-				4E56EEB52C846C71004E28EC /* AppDelegate.swift */,
 				4E56EEB72C846C71004E28EC /* SceneDelegate.swift */,
+				4E56EEB52C846C71004E28EC /* AppDelegate.swift */,
+				4ED9757B2C94ECDE0054697E /* OnBoard.swift */,
 				4E56EEB92C846C71004E28EC /* Main.swift */,
 				4E3983752C88CF30001346C5 /* MainCell.swift */,
+				4E209B732C92DB4C00BA727D /* Subscribe */,
 				4E3983772C88D029001346C5 /* Extensions.swift */,
 				4E56EEC92C84FDA2004E28EC /* VPN.swift */,
 				4E56EEBB2C846C71004E28EC /* Main.storyboard */,
 				4E56EEBE2C846C73004E28EC /* Assets.xcassets */,
 				4E56EEC02C846C73004E28EC /* LaunchScreen.storyboard */,
 				4E56EEC32C846C73004E28EC /* Info.plist */,
+				4E3910412C90A440007C58AD /* molodorya.vpn.entitlements */,
 			);
 			path = molodorya.vpn;
+			sourceTree = "<group>";
+		};
+		4E7661A72C946F470018B32D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E7661A82C946F470018B32D /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,11 +178,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E209B752C92DB8200BA727D /* SubscribeCell.swift in Sources */,
+				4E209B722C92DA2200BA727D /* Subscribers.swift in Sources */,
 				4E56EECA2C84FDA2004E28EC /* VPN.swift in Sources */,
 				4E3983782C88D029001346C5 /* Extensions.swift in Sources */,
 				4E56EEBA2C846C71004E28EC /* Main.swift in Sources */,
 				4E56EEB62C846C71004E28EC /* AppDelegate.swift in Sources */,
 				4E56EEB82C846C71004E28EC /* SceneDelegate.swift in Sources */,
+				4ED9757C2C94ECDE0054697E /* OnBoard.swift in Sources */,
 				4E3983762C88CF30001346C5 /* MainCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +342,7 @@
 				DEVELOPMENT_TEAM = 2HZH3XUR69;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = molodorya.vpn/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Gradient VPN";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -339,6 +372,7 @@
 				DEVELOPMENT_TEAM = 2HZH3XUR69;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = molodorya.vpn/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Gradient VPN";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
