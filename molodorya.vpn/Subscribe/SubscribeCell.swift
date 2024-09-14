@@ -8,16 +8,21 @@
 import UIKit
 
 class SubscribeCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var month: UILabel!
+    @IBOutlet weak var titleMonth: UILabel!
+    @IBOutlet weak var promptMonth: UILabel!
+ 
+    @IBOutlet weak var priceMonth: UILabel!
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+  
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+ 
 
 }

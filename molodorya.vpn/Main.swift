@@ -12,39 +12,31 @@ class Main: UIViewController {
      
     
     var servers = [
-        ["Russia", "Finland", "UAE"],
-        ["0.0.0.0", "1.1.1.1", "2.2.2.2"]
+        ["Нидерланды"],
+        ["Амстердам"]
     ]
     
+    let imgFlags = ["netherlands"]
+    
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var vpnStart: UIButton!
+
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        vpnStart.layer.cornerRadius = 15
-        
         tableView.rowHeight = 70
         tableView.delegate = self
         tableView.dataSource = self
         
-        title = "Molodorya.VPN"
+        title = "Gradient VPN"
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        VPN().connectVPN()
+        
        
     }
     
-    
-    
-    @IBAction func startVPN(_ sender: UIButton) {
-        
-        
-        VPNIKEv2Setup.shared.initVPNTunnelProviderManager()
-
-
-    }
-    
-
 }
 
 
@@ -54,17 +46,21 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return servers.count
+        return servers[1].count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
     
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "main", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "main", for: indexPath) as! MainCell
         
         
-        
-        
+        cell.country.text = servers[0][indexPath.row]
+        cell.city.text = servers[1][indexPath.row]
+        cell.picture.image = UIImage(named: imgFlags[indexPath.row])
         
         return cell
     }

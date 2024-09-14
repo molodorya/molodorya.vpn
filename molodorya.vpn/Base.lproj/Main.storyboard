@@ -16,20 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOC-rz-kSP">
-                                <rect key="frame" x="15" y="726" width="363" height="52"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="00L-vw-LoT"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Запустить VPN">
-                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="startVPN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tjj-aG-tho"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8P2-8t-8g5">
                                 <rect key="frame" x="0.0" y="103" width="393" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -65,6 +51,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OQV-eH-d5L">
                                                     <rect key="frame" x="309" y="19.666666666666671" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="onStatus:" destination="vlO-Ge-N93" eventType="valueChanged" id="Fgh-mJ-awr"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -94,22 +83,158 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8P2-8t-8g5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4u1-eo-Rwo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TOC-rz-kSP" secondAttribute="trailing" constant="15" id="AWn-Iy-qZ1"/>
                             <constraint firstItem="8P2-8t-8g5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PUD-Jj-V7j"/>
-                            <constraint firstItem="TOC-rz-kSP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="Ujw-rV-qPQ"/>
                             <constraint firstAttribute="trailing" secondItem="8P2-8t-8g5" secondAttribute="trailing" id="V2D-oc-tAc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TOC-rz-kSP" secondAttribute="bottom" constant="40" id="vUu-a2-zJ8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vOW-Og-F8n"/>
+                    <navigationItem key="navigationItem" id="vOW-Og-F8n">
+                        <barButtonItem key="rightBarButtonItem" title="Premium" id="A3g-aV-lVz">
+                            <connections>
+                                <segue destination="gHb-OD-VVB" kind="show" id="t02-Z5-5Lt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="8P2-8t-8g5" id="3Jh-0m-M5q"/>
-                        <outlet property="vpnStart" destination="TOC-rz-kSP" id="IK7-fF-RcO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1066.4122137404579" y="3.5211267605633805"/>
+        </scene>
+        <!--Premium-->
+        <scene sceneID="0HQ-MH-8SC">
+            <objects>
+                <viewController id="hFP-CT-hx1" customClass="Subscribers" customModule="molodorya_vpn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wuk-7j-bgd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DGs-qC-D1B">
+                                <rect key="frame" x="0.0" y="328" width="393" height="490"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="subscribeCell" rowHeight="100" id="Ks8-hj-DOd" customClass="SubscribeCell" customModule="molodorya_vpn" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ks8-hj-DOd" id="hJx-Qe-N4E">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Месяц" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whm-ZN-SdO">
+                                                    <rect key="frame" x="69" y="23" width="238" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Безлимитного доступа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAS-Fn-QxN">
+                                                    <rect key="frame" x="69" y="60" width="244" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="249 ₽ " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jL-Ym-eWg">
+                                                    <rect key="frame" x="314" y="37" width="59" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sb-AU-2pN">
+                                                    <rect key="frame" x="15" y="13" width="43" height="74"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="62"/>
+                                                    <color key="textColor" systemColor="systemGray4Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="month" destination="0Sb-AU-2pN" id="rfP-5k-xGq"/>
+                                            <outlet property="priceMonth" destination="2jL-Ym-eWg" id="eDf-pR-UUi"/>
+                                            <outlet property="promptMonth" destination="rAS-Fn-QxN" id="FI0-Ij-8oI"/>
+                                            <outlet property="titleMonth" destination="Whm-ZN-SdO" id="5GG-if-Pfq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Enh-vQ-XA0">
+                                <rect key="frame" x="15" y="103" width="363" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="XYH-ka-Fl2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fgB-f9-KCp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DGs-qC-D1B" firstAttribute="top" secondItem="Enh-vQ-XA0" secondAttribute="bottom" constant="25" id="Izb-CQ-6my"/>
+                            <constraint firstItem="DGs-qC-D1B" firstAttribute="trailing" secondItem="fgB-f9-KCp" secondAttribute="trailing" id="TnZ-K8-1yh"/>
+                            <constraint firstItem="fgB-f9-KCp" firstAttribute="bottom" secondItem="DGs-qC-D1B" secondAttribute="bottom" id="WE0-IS-WfU"/>
+                            <constraint firstItem="DGs-qC-D1B" firstAttribute="leading" secondItem="fgB-f9-KCp" secondAttribute="leading" id="cKE-bQ-Rch"/>
+                            <constraint firstItem="fgB-f9-KCp" firstAttribute="trailing" secondItem="Enh-vQ-XA0" secondAttribute="trailing" constant="15" id="dga-pU-Ai7"/>
+                            <constraint firstItem="Enh-vQ-XA0" firstAttribute="leading" secondItem="fgB-f9-KCp" secondAttribute="leading" constant="15" id="ziD-dF-A21"/>
+                            <constraint firstItem="Enh-vQ-XA0" firstAttribute="top" secondItem="fgB-f9-KCp" secondAttribute="top" id="zq9-ZC-7KM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Premium" id="7lt-XZ-J5K"/>
+                    <connections>
+                        <outlet property="tableView" destination="DGs-qC-D1B" id="0zu-4f-c9c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vuN-9f-hVx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3556.4885496183206" y="74.647887323943664"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sux-GW-9wj">
+            <objects>
+                <navigationController id="AGf-3R-Qwz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yky-kk-VDQ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w9G-46-2in" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2581" y="13"/>
+        </scene>
+        <!--On Board-->
+        <scene sceneID="56Y-MR-fwe">
+            <objects>
+                <viewController storyboardIdentifier="OnBoard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qzV-bp-6Zu" customClass="OnBoard" customModule="molodorya_vpn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jaU-XS-fdp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63R-wt-gOK">
+                                <rect key="frame" x="58" y="609" width="276" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Добавить"/>
+                                <connections>
+                                    <action selector="addButton:" destination="qzV-bp-6Zu" eventType="touchUpInside" id="Ts9-oT-hbr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Добавьте VPN-профиль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkM-1D-B39">
+                                <rect key="frame" x="95" y="148" width="203" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gZO-W0-qcC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cHE-xU-O7k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1645.0381679389313" y="12.67605633802817"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2kd-EE-6t2">
@@ -129,6 +254,25 @@
             </objects>
             <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="T88-td-auu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gHb-OD-VVB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="9TD-tt-IAK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c7M-65-Eic">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hFP-CT-hx1" kind="relationship" relationship="rootViewController" id="VqV-TI-lRl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cYD-tk-UpL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2629.770992366412" y="74.647887323943664"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
@@ -136,6 +280,12 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

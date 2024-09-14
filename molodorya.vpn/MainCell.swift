@@ -22,12 +22,23 @@ class MainCell: UITableViewCell {
     override func awakeFromNib() {
         picture.layer.cornerRadius = picture.frame.width / 2
         
-        country.text = "Russia"
-        city.text = "Moscow"
-        
-        picture.downloaded(from: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/1599px-Flag_of_Russia.svg.png?20120812153731")
+        picture.layer.borderColor = UIColor.black.cgColor
+        picture.layer.borderWidth = 0.05
         
     }
+    
+    
+    @IBAction func onStatus(_ sender: UISwitch) {
+        
+        if onVPN.isOn {
+            VPN().connectVPN()
+        } else {
+            VPN().disconnectVPN()
+        }
+            
+        
+    }
+    
     
     
     
