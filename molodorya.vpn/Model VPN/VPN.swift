@@ -10,6 +10,8 @@ import NetworkExtension
 import UIKit
 import Security
 
+var VPNStatus = false
+
 class VPN {
     
     let vpnManager = NEVPNManager.shared()
@@ -56,7 +58,7 @@ class VPN {
             } else {
                 
                 do {
-                
+                    
                     try self.vpnManager.connection.startVPNTunnel()
                     
                 } catch let error {
@@ -73,17 +75,18 @@ class VPN {
     
     public func connectVPN() {
         self.vpnManager.loadFromPreferences(completionHandler: vpnLoadHandler)
+        VPNStatus = true
+
     }
 
     public func disconnectVPN() -> Void {
         vpnManager.connection.stopVPNTunnel()
+        VPNStatus = false
     }
     
 }
 
-
-
-
+ 
 
 // Identifiers
 let serviceIdentifier = "MySerivice"

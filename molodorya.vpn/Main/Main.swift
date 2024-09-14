@@ -18,12 +18,42 @@ class Main: UIViewController {
     
     let imgFlags = ["netherlands"]
     
+    
+    
+    
     @IBOutlet weak var tableView: UITableView!
 
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        if launchedBefore  {
+            print("Not first launch.")
+        } else {
+            print("First launch, setting UserDefault.")
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "OnBoard")
+            if #available(iOS 15.0, *) {
+                if let sheet = vc.sheetPresentationController {
+                    sheet.detents = [.medium()]
+                }
+            } else {
+             
+            }
+            
+            present(vc, animated: true)
+           
+        }
+        
+        
+       
+        getDataVPN().getDataFromJSON()
+        
         
         tableView.rowHeight = 70
         tableView.delegate = self
@@ -32,8 +62,7 @@ class Main: UIViewController {
         title = "Gradient VPN"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        VPN().connectVPN()
-        
+       
        
     }
     
@@ -50,7 +79,7 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
