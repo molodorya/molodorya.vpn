@@ -19,10 +19,10 @@ class MainCell: UITableViewCell {
     @IBOutlet weak var statusLabel: UILabel!
     
     
-    var timer : Timer?
-    var counter = 0
-
+    @IBOutlet weak var hiddenServer: UIView!
     
+    
+   
     
     override func awakeFromNib() {
         picture.layer.cornerRadius = picture.frame.width / 2
@@ -34,36 +34,34 @@ class MainCell: UITableViewCell {
         
         
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { Timer in
-            
-            let status = VPN().vpnManager.connection.status
-            
-            
-            switch status {
-            case NEVPNStatus.connected:
-                self.onVPN.isOn = true
-                self.statusLabel.text = "· Connected"
-                self.statusLabel.textColor = .systemGreen
-                self.statusLabel.isHidden = false
                 
-            case NEVPNStatus.invalid, NEVPNStatus.disconnected :
-                self.onVPN.isOn = false
-                self.statusLabel.isHidden = true
+                let status = VPN().vpnManager.connection.status
                 
-            case NEVPNStatus.connecting , NEVPNStatus.reasserting:
-                self.onVPN.isOn = true
-                self.statusLabel.isHidden = false
-                self.statusLabel.text = "· Connecting"
-                self.statusLabel.textColor = .systemYellow
                 
-            case NEVPNStatus.disconnecting:
-                self.onVPN.isOn = false
-                self.statusLabel.isHidden = true
+                switch status {
+                case NEVPNStatus.connected:
+                    self.statusLabel.text = "· Connected"
+                    self.statusLabel.textColor = .systemGreen
+                    self.statusLabel.isHidden = false
+                    
+                case NEVPNStatus.invalid, NEVPNStatus.disconnected :
+                    self.statusLabel.isHidden = true
+                    
+                case NEVPNStatus.connecting , NEVPNStatus.reasserting:
+                    self.statusLabel.isHidden = false
+                    self.statusLabel.text = "· Connecting"
+                    self.statusLabel.textColor = .systemYellow
+                    
+                case NEVPNStatus.disconnecting:
+                    self.statusLabel.isHidden = true
+                   
+                default:
+                    break
+                }
                
-            default:
-                print("Unknown VPN connection status")
             }
-           
-        }
+        
+        
         
     }
     
@@ -72,36 +70,14 @@ class MainCell: UITableViewCell {
     
     @IBAction func onStatus(_ sender: UISwitch) {
         
-        
-        
-        if onVPN.isOn == true {
-            VPN().connectVPN()
-          
-//            timer = Timer.scheduledTimer(timeInterval:1, target:self, selector:#selector(prozessTimer), userInfo: nil, repeats: true)
-            
-        } else {
-            print(2)
-            VPN().disconnectVPN()
-            killTimer()
-        }
-            
+      
         
     }
     
     
     
     
-    @objc func prozessTimer() {
-        counter += 1
-        print("This is a second ", counter)
-        
-    }
-    
-    func killTimer() {
-        timer?.invalidate()
-        timer = nil
-    }
-
+ 
     
     
 }

@@ -33,6 +33,20 @@ class Subscribers: UIViewController {
     
     @IBAction func rightBarButton(_ sender: UIBarButtonItem) {
         
+//        let kcs = KeychainService()
+//        kcs.save(key: "SHAREDNew", value: sharedSecretTextField.text ?? "")
+//        kcs.save(key: "VPN_PASSWORDNew", value: passwordTextField.text ?? "")
+////        p.sharedSecretReference = kcs.load(key: "SHARED")
+////        p.passwordReference = kcs.load(key: "VPN_PASSWORD")
+//        
+//        
+//        Main.addedServer.append(NewVPN(username: serverNameTextField.text ?? "", serverAdress: serverAdressTextFIeld.text ?? "", sharedSecret: kcs.load(key: "SHAREDNew"), password: kcs.load(key: "VPN_PASSWORDNew"), nameVPN: VPNNameTextField.text ?? ""))
+        
+        
+        
+        connectNewVPN(username: serverNameTextField.text ?? "", serverAdress: serverAdressTextFIeld.text ?? "", sharedSecret: sharedSecretTextField.text ?? "", password: passwordTextField.text ?? "", nameVPN: VPNNameTextField.text ?? "")
+        
+        
         
     }
     

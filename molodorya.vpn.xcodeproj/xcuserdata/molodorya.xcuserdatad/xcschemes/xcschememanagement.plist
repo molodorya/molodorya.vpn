@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>WidgetVPNExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>molodorya.vpn.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>

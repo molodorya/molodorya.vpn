@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E209B722C92DA2200BA727D /* Subscribers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E209B712C92DA2200BA727D /* Subscribers.swift */; };
-		4E209B752C92DB8200BA727D /* SubscribeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E209B742C92DB8200BA727D /* SubscribeCell.swift */; };
+		4E0CF4742C9602E2004BF4C9 /* ModelVPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0CF4732C9602E2004BF4C9 /* ModelVPN.swift */; };
+		4E0CF47E2C9763C7004BF4C9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E0CF47D2C9763C7004BF4C9 /* StoreKit.framework */; };
+		4E209B722C92DA2200BA727D /* AddNewServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E209B712C92DA2200BA727D /* AddNewServer.swift */; };
+		4E2F87BD2C9F21DF007F0002 /* ModelMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2F87BC2C9F21DF007F0002 /* ModelMap.swift */; };
 		4E3983762C88CF30001346C5 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3983752C88CF30001346C5 /* MainCell.swift */; };
 		4E3983782C88D029001346C5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3983772C88D029001346C5 /* Extensions.swift */; };
 		4E56EEB62C846C71004E28EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56EEB52C846C71004E28EC /* AppDelegate.swift */; };
@@ -18,13 +20,30 @@
 		4E56EEBF2C846C73004E28EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E56EEBE2C846C73004E28EC /* Assets.xcassets */; };
 		4E56EEC22C846C73004E28EC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4E56EEC12C846C73004E28EC /* Base */; };
 		4E56EECA2C84FDA2004E28EC /* VPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56EEC92C84FDA2004E28EC /* VPN.swift */; };
-		4E7661A92C946F470018B32D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7661A82C946F470018B32D /* StoreKit.framework */; };
+		4EBB0A982C9874220079F7F5 /* AddNewVPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBB0A972C9874220079F7F5 /* AddNewVPN.swift */; };
 		4ED9757C2C94ECDE0054697E /* OnBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED9757B2C94ECDE0054697E /* OnBoard.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4E0CF46D2C95F07E004BF4C9 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		4E209B712C92DA2200BA727D /* Subscribers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscribers.swift; sourceTree = "<group>"; };
-		4E209B742C92DB8200BA727D /* SubscribeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeCell.swift; sourceTree = "<group>"; };
+		4E0CF4572C95F07C004BF4C9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		4E0CF4592C95F07D004BF4C9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		4E0CF4732C9602E2004BF4C9 /* ModelVPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelVPN.swift; sourceTree = "<group>"; };
+		4E0CF47D2C9763C7004BF4C9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4E209B712C92DA2200BA727D /* AddNewServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewServer.swift; sourceTree = "<group>"; };
+		4E2F87BC2C9F21DF007F0002 /* ModelMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMap.swift; sourceTree = "<group>"; };
 		4E3910412C90A440007C58AD /* molodorya.vpn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = molodorya.vpn.entitlements; sourceTree = "<group>"; };
 		4E3983752C88CF30001346C5 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		4E3983772C88D029001346C5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -37,7 +56,7 @@
 		4E56EEC12C846C73004E28EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E56EEC32C846C73004E28EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E56EEC92C84FDA2004E28EC /* VPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPN.swift; sourceTree = "<group>"; };
-		4E7661A82C946F470018B32D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4EBB0A972C9874220079F7F5 /* AddNewVPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewVPN.swift; sourceTree = "<group>"; };
 		4ED9757B2C94ECDE0054697E /* OnBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,20 +65,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E7661A92C946F470018B32D /* StoreKit.framework in Frameworks */,
+				4E0CF47E2C9763C7004BF4C9 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E209B732C92DB4C00BA727D /* Subscribe */ = {
+		4E0CF4752C96059D004BF4C9 /* Model VPN */ = {
 			isa = PBXGroup;
 			children = (
-				4E209B712C92DA2200BA727D /* Subscribers.swift */,
-				4E209B742C92DB8200BA727D /* SubscribeCell.swift */,
+				4E0CF4732C9602E2004BF4C9 /* ModelVPN.swift */,
+				4EBB0A972C9874220079F7F5 /* AddNewVPN.swift */,
+				4E56EEC92C84FDA2004E28EC /* VPN.swift */,
 			);
-			path = Subscribe;
+			path = "Model VPN";
+			sourceTree = "<group>";
+		};
+		4E0CF4762C9605B7004BF4C9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4E56EEB92C846C71004E28EC /* Main.swift */,
+				4E3983752C88CF30001346C5 /* MainCell.swift */,
+				4E2F87BC2C9F21DF007F0002 /* ModelMap.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4E209B732C92DB4C00BA727D /* AddNewServer */ = {
+			isa = PBXGroup;
+			children = (
+				4E209B712C92DA2200BA727D /* AddNewServer.swift */,
+			);
+			path = AddNewServer;
 			sourceTree = "<group>";
 		};
 		4E56EEA92C846C71004E28EC = {
@@ -82,14 +120,13 @@
 		4E56EEB42C846C71004E28EC /* molodorya.vpn */ = {
 			isa = PBXGroup;
 			children = (
-				4E56EEB72C846C71004E28EC /* SceneDelegate.swift */,
 				4E56EEB52C846C71004E28EC /* AppDelegate.swift */,
+				4E56EEB72C846C71004E28EC /* SceneDelegate.swift */,
 				4ED9757B2C94ECDE0054697E /* OnBoard.swift */,
-				4E56EEB92C846C71004E28EC /* Main.swift */,
-				4E3983752C88CF30001346C5 /* MainCell.swift */,
-				4E209B732C92DB4C00BA727D /* Subscribe */,
+				4E0CF4762C9605B7004BF4C9 /* Main */,
+				4E209B732C92DB4C00BA727D /* AddNewServer */,
+				4E0CF4752C96059D004BF4C9 /* Model VPN */,
 				4E3983772C88D029001346C5 /* Extensions.swift */,
-				4E56EEC92C84FDA2004E28EC /* VPN.swift */,
 				4E56EEBB2C846C71004E28EC /* Main.storyboard */,
 				4E56EEBE2C846C73004E28EC /* Assets.xcassets */,
 				4E56EEC02C846C73004E28EC /* LaunchScreen.storyboard */,
@@ -102,7 +139,9 @@
 		4E7661A72C946F470018B32D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4E7661A82C946F470018B32D /* StoreKit.framework */,
+				4E0CF47D2C9763C7004BF4C9 /* StoreKit.framework */,
+				4E0CF4572C95F07C004BF4C9 /* WidgetKit.framework */,
+				4E0CF4592C95F07D004BF4C9 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -117,6 +156,7 @@
 				4E56EEAE2C846C71004E28EC /* Sources */,
 				4E56EEAF2C846C71004E28EC /* Frameworks */,
 				4E56EEB02C846C71004E28EC /* Resources */,
+				4E0CF46D2C95F07E004BF4C9 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -178,13 +218,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E209B752C92DB8200BA727D /* SubscribeCell.swift in Sources */,
-				4E209B722C92DA2200BA727D /* Subscribers.swift in Sources */,
+				4E209B722C92DA2200BA727D /* AddNewServer.swift in Sources */,
+				4E2F87BD2C9F21DF007F0002 /* ModelMap.swift in Sources */,
 				4E56EECA2C84FDA2004E28EC /* VPN.swift in Sources */,
 				4E3983782C88D029001346C5 /* Extensions.swift in Sources */,
 				4E56EEBA2C846C71004E28EC /* Main.swift in Sources */,
 				4E56EEB62C846C71004E28EC /* AppDelegate.swift in Sources */,
+				4E0CF4742C9602E2004BF4C9 /* ModelVPN.swift in Sources */,
 				4E56EEB82C846C71004E28EC /* SceneDelegate.swift in Sources */,
+				4EBB0A982C9874220079F7F5 /* AddNewVPN.swift in Sources */,
 				4ED9757C2C94ECDE0054697E /* OnBoard.swift in Sources */,
 				4E3983762C88CF30001346C5 /* MainCell.swift in Sources */,
 			);
@@ -343,11 +385,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = molodorya.vpn/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Gradient VPN";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Ваша локация нужна для отображение вашей иконки на карте и подсчета расстояния.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -373,11 +418,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = molodorya.vpn/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Gradient VPN";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Ваша локация нужна для отображение вашей иконки на карте и подсчета расстояния.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

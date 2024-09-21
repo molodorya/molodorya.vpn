@@ -9,9 +9,6 @@ import UIKit
 
 class OnBoard: UIViewController {
 
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,8 +19,8 @@ class OnBoard: UIViewController {
 
     @IBAction func addButton(_ sender: UIButton) {
         
-        VPN().connectVPN()
-        dismiss(animated: true)
+//        VPN().connectVPN()
+//        dismiss(animated: true)
         
     }
     

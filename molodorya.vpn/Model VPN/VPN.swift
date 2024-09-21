@@ -40,7 +40,7 @@ class VPN {
             self.vpnManager.protocolConfiguration = p
             
              
-            self.vpnManager.localizedDescription = "GradientVPN"
+            self.vpnManager.localizedDescription = "Gradient VPN"
             self.vpnManager.isEnabled = true
             self.vpnManager.saveToPreferences(completionHandler: self.vpnSaveHandler)
         } }
