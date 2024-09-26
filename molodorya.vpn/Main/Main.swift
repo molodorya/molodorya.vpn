@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import MapKit
-import CoreLocation
 import NetworkExtension
+import AVKit
 
 class Main: UIViewController {
     
@@ -16,20 +15,23 @@ class Main: UIViewController {
     
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var connect: UIButton!
-    @IBOutlet weak var mapView: MKMapView!
-    
-    
 
+    @IBOutlet weak var videoView: UIView!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var player: AVPlayer!
+    var avPlayerLayer: AVPlayerLayer!
+    
+  
     
     let imgFlags = ["netherlands", "uae"]
     
-    let locationManager = CLLocationManager()
-    var location: CLLocation?
-    let annotation = MKPointAnnotation()
+  
     
     var servers = [
         ServerLocation(country: "Netherlands", city: "Amsterdam", imgFlag: "netherlands", lat: 55, long: 22),
-//        ServerLocation(country: "UAE (Premium)", city: "Dubai", imgFlag: "uae", lat: 25.20, long: 55.27)
+        ServerLocation(country: "UAE (Premium)", city: "Dubai", imgFlag: "uae", lat: 25.20, long: 55.27)
     ]
     
     var users = [
@@ -41,19 +43,30 @@ class Main: UIViewController {
     var swithStatus = [true, false]
     
     
-    
-    @IBOutlet weak var tableView: UITableView!
+    func onVPNAnimation() {
+        guard let path = Bundle.main.path(forResource: "vpn", ofType:".mp4") else {
+             
+            return
+        }
+        player = AVPlayer(url: URL(fileURLWithPath: path))
+        avPlayerLayer = AVPlayerLayer(player: player)
+        avPlayerLayer.videoGravity = AVLayerVideoGravity.resize
 
-    
-
+        videoView.layer.addSublayer(avPlayerLayer)
+        player.play()
+    }
+ 
+   
     override func viewDidLoad() {
         super.viewDidLoad()
      
+       
+     onVPNAnimation()
         
         bottomView.roundCorners(corners: [.topLeft, .topRight], radius: 30)
         
         connect.layer.cornerRadius = 25
-        mapView.delegate = self
+     
         
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if launchedBefore  {
@@ -74,50 +87,27 @@ class Main: UIViewController {
            
         }
         
-        
-
-        
         tableView.rowHeight = 70
         tableView.delegate = self
         tableView.dataSource = self
-        
-//        title = "Gradient VPN"
+
         navigationController?.navigationBar.prefersLargeTitles = true
-        
-        
-        mapView.delegate = self
-
-        locationManager.requestWhenInUseAuthorization()
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        
-        DispatchQueue.global().async { [self] in
-            if CLLocationManager.locationServicesEnabled() {
-                locationManager.delegate = self
-                locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-                locationManager.startUpdatingLocation()
-            }
-
-        }
-        
-        
-        checkLocationEnable()
+         
         connect.titleLabel?.textAlignment = .center
-        
-       
-       
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
          super.viewDidAppear(animated)
          
-         let center = CLLocationCoordinate2D(latitude: location?.coordinate.latitude ?? 0.0, longitude: location?.coordinate.longitude ?? 0.0)
-         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 70, longitudeDelta: 0.01))
-         
-         mapView.setRegion(region, animated: true)
      }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+//        avPlayerLayer.frame = videoView.layer.bounds
+    }
+   
+
 
     
     var statusVPN = false
@@ -273,156 +263,3 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
 
 
 
-extension Main: CLLocationManagerDelegate, MKMapViewDelegate {
-    
-    
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        
-        location = locations.last
-//        print("\(locValue.longitude)", "\(locValue.latitude)")
-
-//        ViewController.locationSetting = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
-        
-    }
-    
-   
-    
-    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-        let annotation = view.annotation
-        let index = (self.mapView.annotations as NSArray).index(of: annotation!)
-        
-        
-
-        print ("Annotation Index = \(index)")
-    }
-    
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
-        let customAnnotationView = CustomAnnotationView(annotation: annotation, reuseIdentifier: "CustomAnnotationViewID")
-        customAnnotationView.canShowCallout = true
-        
-        customAnnotationView.userLabel.text = annotation.title ?? "No name"
-        
-        customAnnotationView.userImage.image = UIImage(named: servers[0].imgFlag!)
-        
-       
-
-
-        mapView.addAnnotations(users)
-        
-        
-        // Убирает текст
-        guard !(annotation is MKUserLocation) else { return nil }
-       
-        
-        return customAnnotationView
-    }
-    
-    
-    func checkLocationEnable() {
-        DispatchQueue.global().async {
-            if CLLocationManager.locationServicesEnabled() {
-                
-            } else {
-                let alert = UIAlertController(title: "Нет доступа к геолокации", message: "Хотите включить?", preferredStyle: .alert)
-                let settingAction = UIAlertAction(title: "Да", style: .default, handler: { alert in
-                    if let url = URL(string: "App-Prefs:root=LOCATION_SERVICES") {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                    }
-                })
-                let cancelAction = UIAlertAction(title: "Нет", style: .cancel, handler: nil)
-                
-                alert.addAction(settingAction)
-                alert.addAction(cancelAction)
-                
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
-    }
-    
-    
-}
-
-
-
-
-class CustomAnnotationView: MKAnnotationView {
-    private let annotationFrame = CGRect(x: 0, y: 0, width: 70, height: 70)
-    let sizeView = 70
-    
-    
-    let viewing = UIView()
-    let userImage = UIImageView()
-    let userLabel = UILabel()
-    
-    
-    
-    @available(iOS 13.0, *)
-    func naming(image: UIImage?, name: String?) {
-        
-        viewing.frame = CGRect(x: 0, y: 0, width: sizeView, height: sizeView)
-        viewing.backgroundColor = .systemGray
-        viewing.layer.borderWidth = 1
-        viewing.layer.borderColor = UIColor.label.cgColor
-        viewing.layer.cornerRadius = viewing.frame.height / 2
-        
-        
-        userImage.frame = CGRect(x: 0, y: 0, width: sizeView, height: sizeView)
-        userImage.backgroundColor = .systemGray6
-        userImage.contentMode = .scaleAspectFill
-        userImage.backgroundColor = .clear
-        userImage.layer.cornerRadius = userImage.frame.height / 2
-        userImage.layer.masksToBounds = true
-       
-    
-        // Если менять sizeView, то позицию y нужно отдельно калибровать
-        userLabel.text = ""
-        userLabel.font = UIFont.boldSystemFont(ofSize: 7)
-        userLabel.textColor = .label
-        userLabel.textAlignment = .center
-        userLabel.frame = CGRect(x: 0, y: 30, width: sizeView, height: sizeView)
-    }
-    
-  
-    
-    override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
-        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        
-     
-       
-        if #available(iOS 13.0, *) {
-            naming(image: UIImage(named: "uae"), name: nil)
-        } else {
-            // Fallback on earlier versions
-        }
-       
-      
-        
-        
-        
-        viewing.addSubview(userImage)
-        viewing.addSubview(userLabel)
-        
-        
-        
-       
-       
-        self.frame = annotationFrame
-    
-         
-        self.backgroundColor = .clear
-        
-        self.addSubview(viewing)
-        
- 
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) not implemented!")
-    }
-}
-
-
- 
