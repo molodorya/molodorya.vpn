@@ -13,6 +13,7 @@
 		4E2F87BD2C9F21DF007F0002 /* ModelMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2F87BC2C9F21DF007F0002 /* ModelMap.swift */; };
 		4E3983762C88CF30001346C5 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3983752C88CF30001346C5 /* MainCell.swift */; };
 		4E3983782C88D029001346C5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3983772C88D029001346C5 /* Extensions.swift */; };
+		4E4F80B72CA2E24500E4A4E8 /* texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4E4F80B62CA2E24500E4A4E8 /* texture.jpg */; };
 		4E56EEB62C846C71004E28EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56EEB52C846C71004E28EC /* AppDelegate.swift */; };
 		4E56EEB82C846C71004E28EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56EEB72C846C71004E28EC /* SceneDelegate.swift */; };
 		4E56EEBA2C846C71004E28EC /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56EEB92C846C71004E28EC /* Main.swift */; };
@@ -20,8 +21,13 @@
 		4E56EEBF2C846C73004E28EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E56EEBE2C846C73004E28EC /* Assets.xcassets */; };
 		4E56EEC22C846C73004E28EC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4E56EEC12C846C73004E28EC /* Base */; };
 		4E56EECA2C84FDA2004E28EC /* VPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56EEC92C84FDA2004E28EC /* VPN.swift */; };
+		4E5ACF7E2CA3478600D9E3DC /* night.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4E5ACF7D2CA3478600D9E3DC /* night.jpg */; };
+		4E5ACF802CA3479E00D9E3DC /* earth.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4E5ACF7F2CA3479E00D9E3DC /* earth.dae */; };
+		4E67E3122CA41F6B0009522F /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E67E3112CA41F6B0009522F /* clouds.png */; };
+		4E88B5072CA53CC200AC5711 /* stars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4E88B5062CA53CC200AC5711 /* stars.jpg */; };
 		4EBB0A982C9874220079F7F5 /* AddNewVPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBB0A972C9874220079F7F5 /* AddNewVPN.swift */; };
 		4ED9757C2C94ECDE0054697E /* OnBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED9757B2C94ECDE0054697E /* OnBoard.swift */; };
+		4EDFFAF12CA1ADBA00E019FA /* vpn.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4EDFFAF02CA1AD4500E019FA /* vpn.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +53,7 @@
 		4E3910412C90A440007C58AD /* molodorya.vpn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = molodorya.vpn.entitlements; sourceTree = "<group>"; };
 		4E3983752C88CF30001346C5 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		4E3983772C88D029001346C5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4E4F80B62CA2E24500E4A4E8 /* texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = texture.jpg; path = "../../../../../../../Downloads/59-earth/textures/texture.jpg"; sourceTree = "<group>"; };
 		4E56EEB22C846C71004E28EC /* molodorya.vpn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = molodorya.vpn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E56EEB52C846C71004E28EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E56EEB72C846C71004E28EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +63,13 @@
 		4E56EEC12C846C73004E28EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E56EEC32C846C73004E28EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E56EEC92C84FDA2004E28EC /* VPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPN.swift; sourceTree = "<group>"; };
+		4E5ACF7D2CA3478600D9E3DC /* night.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = night.jpg; path = ../../../../../../../.Trash/night.jpg; sourceTree = "<group>"; };
+		4E5ACF7F2CA3479E00D9E3DC /* earth.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; name = earth.dae; path = ../../../../../../../.Trash/earth.dae; sourceTree = "<group>"; };
+		4E67E3112CA41F6B0009522F /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clouds.png; path = "../../../../../../../Downloads/c7n8gttq5hxc-Earth/Maps/clouds.png"; sourceTree = "<group>"; };
+		4E88B5062CA53CC200AC5711 /* stars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = stars.jpg; path = ../../../../../../../Downloads/stars.jpg; sourceTree = "<group>"; };
 		4EBB0A972C9874220079F7F5 /* AddNewVPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewVPN.swift; sourceTree = "<group>"; };
 		4ED9757B2C94ECDE0054697E /* OnBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoard.swift; sourceTree = "<group>"; };
+		4EDFFAF02CA1AD4500E019FA /* vpn.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = vpn.mp4; path = ../../../../../Desktop/vpn.mp4; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +135,7 @@
 				4E56EEB52C846C71004E28EC /* AppDelegate.swift */,
 				4E56EEB72C846C71004E28EC /* SceneDelegate.swift */,
 				4ED9757B2C94ECDE0054697E /* OnBoard.swift */,
+				4EDFFAEF2CA1AD3800E019FA /* art.scnassets */,
 				4E0CF4762C9605B7004BF4C9 /* Main */,
 				4E209B732C92DB4C00BA727D /* AddNewServer */,
 				4E0CF4752C96059D004BF4C9 /* Model VPN */,
@@ -144,6 +157,19 @@
 				4E0CF4592C95F07D004BF4C9 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4EDFFAEF2CA1AD3800E019FA /* art.scnassets */ = {
+			isa = PBXGroup;
+			children = (
+				4E5ACF7D2CA3478600D9E3DC /* night.jpg */,
+				4E67E3112CA41F6B0009522F /* clouds.png */,
+				4E88B5062CA53CC200AC5711 /* stars.jpg */,
+				4E5ACF7F2CA3479E00D9E3DC /* earth.dae */,
+				4E4F80B62CA2E24500E4A4E8 /* texture.jpg */,
+				4EDFFAF02CA1AD4500E019FA /* vpn.mp4 */,
+			);
+			path = art.scnassets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,8 +232,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E56EEBF2C846C73004E28EC /* Assets.xcassets in Resources */,
+				4E88B5072CA53CC200AC5711 /* stars.jpg in Resources */,
 				4E56EEC22C846C73004E28EC /* Base in Resources */,
+				4E5ACF7E2CA3478600D9E3DC /* night.jpg in Resources */,
+				4EDFFAF12CA1ADBA00E019FA /* vpn.mp4 in Resources */,
+				4E5ACF802CA3479E00D9E3DC /* earth.dae in Resources */,
+				4E4F80B72CA2E24500E4A4E8 /* texture.jpg in Resources */,
 				4E56EEBD2C846C71004E28EC /* Base in Resources */,
+				4E67E3122CA41F6B0009522F /* clouds.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

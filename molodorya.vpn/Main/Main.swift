@@ -9,6 +9,10 @@ import UIKit
 import NetworkExtension
 import AVKit
 
+import SceneKit
+
+
+
 class Main: UIViewController {
     
     static var addedServer: [NewVPN] = []
@@ -16,18 +20,54 @@ class Main: UIViewController {
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var connect: UIButton!
 
-    @IBOutlet weak var videoView: UIView!
+//    @IBOutlet weak var videoView: UIView!
     
     @IBOutlet weak var tableView: UITableView!
     
     var player: AVPlayer!
     var avPlayerLayer: AVPlayerLayer!
     
-  
+    @IBOutlet weak var sceneView: SCNView!
+    var modelNode: SCNNode!
+
+    
+    
+    // MARK: - Создание 3D модели
+    func addSceneViewModel() {
+        
+        let scene = SCNScene()
+        sceneView.scene = scene
+        sceneView.backgroundColor = .clear
+        sceneView.allowsCameraControl = false
+        
+        // Загружаем модель
+        let modelScene = SCNScene(named: "earth.dae")
+        modelNode = modelScene?.rootNode.childNode(withName: "worldVPN", recursively: true)
+     
+        scene.rootNode.addChildNode(modelNode!)
+        
+    }
+    
+    
+    // MARK: - Анимация 3D модели
+    func rotateModel(status: Bool) {
+        
+        let rotateAction = SCNAction.rotate(by: CGFloat.pi * 0.10, around: SCNVector3(0, 1, 0), duration: 1)
+        let repeatAction = SCNAction.repeatForever(rotateAction)
+        
+        if status == true {
+            modelNode.runAction(repeatAction)
+        } else {
+            modelNode.removeAllActions()
+        }
+        
+        
+    }
+
     
     let imgFlags = ["netherlands", "uae"]
     
-  
+    
     
     var servers = [
         ServerLocation(country: "Netherlands", city: "Amsterdam", imgFlag: "netherlands", lat: 55, long: 22),
@@ -42,31 +82,18 @@ class Main: UIViewController {
     
     var swithStatus = [true, false]
     
-    
-    func onVPNAnimation() {
-        guard let path = Bundle.main.path(forResource: "vpn", ofType:".mp4") else {
-             
-            return
-        }
-        player = AVPlayer(url: URL(fileURLWithPath: path))
-        avPlayerLayer = AVPlayerLayer(player: player)
-        avPlayerLayer.videoGravity = AVLayerVideoGravity.resize
 
-        videoView.layer.addSublayer(avPlayerLayer)
-        player.play()
-    }
- 
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-     
-       
-     onVPNAnimation()
+        
+        
+        addSceneViewModel()
         
         bottomView.roundCorners(corners: [.topLeft, .topRight], radius: 30)
         
         connect.layer.cornerRadius = 25
-     
+        
         
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if launchedBefore  {
@@ -80,35 +107,35 @@ class Main: UIViewController {
                     sheet.detents = [.medium()]
                 }
             } else {
-             
+                
             }
             
             present(vc, animated: true)
-           
+            
         }
         
         tableView.rowHeight = 70
         tableView.delegate = self
         tableView.dataSource = self
-
+        
         navigationController?.navigationBar.prefersLargeTitles = true
-         
+        
         connect.titleLabel?.textAlignment = .center
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
-         super.viewDidAppear(animated)
-         
-     }
+        super.viewDidAppear(animated)
+        
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        avPlayerLayer.frame = videoView.layer.bounds
+        //        avPlayerLayer.frame = videoView.layer.bounds
     }
-   
-
-
+    
+    
+    
     
     var statusVPN = false
     
@@ -121,9 +148,12 @@ class Main: UIViewController {
         if statusVPN == false {
             VPN().connectVPN()
             statusVPN = true
+            rotateModel(status: true)
+           
         } else {
             VPN().disconnectVPN()
             statusVPN = false
+            rotateModel(status: false)
         }
         
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [self] Timer in
@@ -134,9 +164,10 @@ class Main: UIViewController {
             switch status {
             case NEVPNStatus.connected:
                 connect.titleLabel?.text = "Отключить"
-            
+                
                 UIView.animate(withDuration: 0.3) {
                     self.connect.backgroundColor = .systemRed
+                   
                 }
                 
                 
@@ -146,10 +177,15 @@ class Main: UIViewController {
                 
             case NEVPNStatus.invalid, NEVPNStatus.disconnected:
                 connect.titleLabel?.text = "Подключиться"
-             
-             
+                
+                
                 UIView.animate(withDuration: 0.3) {
-                    self.connect.backgroundColor = .systemGreen
+                    if #available(iOS 13.0, *) {
+                        self.connect.backgroundColor = .systemGray2
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                    
                 }
                 
                 
@@ -159,16 +195,17 @@ class Main: UIViewController {
                 connect.titleLabel?.lineBreakMode = .byWordWrapping
                 
                 UIView.animate(withDuration: 0.3) {
-                    self.connect.backgroundColor = UIColor.init(hexString: "2e6930")
+                    self.connect.backgroundColor = .systemYellow
                 }
                 
                 
                 
             case NEVPNStatus.disconnecting:
-                connect.titleLabel?.text = "Подключиться"
-              
+                connect.titleLabel?.text = "Отключение"
+                
                 UIView.animate(withDuration: 0.3) {
-                    self.connect.backgroundColor = .systemBlue
+                    self.connect.backgroundColor = .systemRed
+                   
                 }
                 
                 
@@ -180,11 +217,11 @@ class Main: UIViewController {
         
         
     }
-        
-       
-        
-    }
     
+    
+    
+}
+
     
     
 
@@ -227,6 +264,7 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
             cell.city.text = servers[1].city
             cell.picture.image = UIImage(named: imgFlags[1])
             cell.onVPN.isOn = swithStatus[1]
+            cell.statusLabel.text = ""
 
             
             cell.hiddenServer.isHidden = false
@@ -236,19 +274,6 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
             break
             
         }
-        
-        
-        /*
-         cell.country.text = servers[0][indexPath.row]
-         cell.city.text = servers[1][indexPath.row]
-         cell.picture.image = UIImage(named: imgFlags[indexPath.row])
-         cell.onVPN.isOn = swithStatus[indexPath.row]
-         */
-  
-        
-        
-        
-        
         
         return cell
     }
