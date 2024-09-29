@@ -399,7 +399,7 @@
         <image name="mobileConfig" width="256" height="256"/>
         <image name="multiply" catalog="system" width="128" height="111"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="stars.jpg" width="203.52000427246094" height="114.48000335693359"/>
+        <image name="stars.jpg" width="6070" height="3414"/>
         <systemColor name="placeholderTextColor">
             <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
