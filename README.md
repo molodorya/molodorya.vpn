@@ -4,10 +4,13 @@
 <h4>Ответ от Apple:
 Your VPN app was submitted by an Apple Developer Program account registered to an individual.<br>
 All VPN apps must be submitted from an Apple Developer Program account registered to a company or organization.</h4>
- 
 
 
-![first](https://github.com/user-attachments/assets/bcaa93a5-98d5-48fe-988b-5e4c37839036)
+ <img weight=500 height=500>
+ ![first](https://github.com/user-attachments/assets/bcaa93a5-98d5-48fe-988b-5e4c37839036)
+ </img>
+
+
 
 
 
