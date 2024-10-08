@@ -3,29 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 74;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E07E24D2CA97CB200A67FF5 /* TopAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E24C2CA97CB200A67FF5 /* TopAlertView.swift */; };
 		4E0CF4742C9602E2004BF4C9 /* ModelVPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0CF4732C9602E2004BF4C9 /* ModelVPN.swift */; };
 		4E0CF47E2C9763C7004BF4C9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E0CF47D2C9763C7004BF4C9 /* StoreKit.framework */; };
+		4E0DF07B2CA846E4004B0317 /* stars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4E0DF07A2CA846E4004B0317 /* stars.jpg */; };
 		4E209B722C92DA2200BA727D /* AddNewServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E209B712C92DA2200BA727D /* AddNewServer.swift */; };
 		4E2F87BD2C9F21DF007F0002 /* ModelMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2F87BC2C9F21DF007F0002 /* ModelMap.swift */; };
 		4E3983762C88CF30001346C5 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3983752C88CF30001346C5 /* MainCell.swift */; };
 		4E3983782C88D029001346C5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3983772C88D029001346C5 /* Extensions.swift */; };
-		4E4F80B72CA2E24500E4A4E8 /* texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4E4F80B62CA2E24500E4A4E8 /* texture.jpg */; };
 		4E56EEB62C846C71004E28EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56EEB52C846C71004E28EC /* AppDelegate.swift */; };
 		4E56EEB82C846C71004E28EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56EEB72C846C71004E28EC /* SceneDelegate.swift */; };
 		4E56EEBA2C846C71004E28EC /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56EEB92C846C71004E28EC /* Main.swift */; };
-		4E56EEBD2C846C71004E28EC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4E56EEBC2C846C71004E28EC /* Base */; };
 		4E56EEBF2C846C73004E28EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E56EEBE2C846C73004E28EC /* Assets.xcassets */; };
 		4E56EEC22C846C73004E28EC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4E56EEC12C846C73004E28EC /* Base */; };
 		4E56EECA2C84FDA2004E28EC /* VPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E56EEC92C84FDA2004E28EC /* VPN.swift */; };
-		4E5ACF7E2CA3478600D9E3DC /* night.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4E5ACF7D2CA3478600D9E3DC /* night.jpg */; };
-		4E5ACF802CA3479E00D9E3DC /* earth.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4E5ACF7F2CA3479E00D9E3DC /* earth.dae */; };
-		4E67E3122CA41F6B0009522F /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E67E3112CA41F6B0009522F /* clouds.png */; };
-		4E88B5072CA53CC200AC5711 /* stars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4E88B5062CA53CC200AC5711 /* stars.jpg */; };
 		4EBB0A982C9874220079F7F5 /* AddNewVPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBB0A972C9874220079F7F5 /* AddNewVPN.swift */; };
+		4EC880D52CAACC2000B783FB /* night.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC880D42CAACC2000B783FB /* night.png */; };
+		4EC880D62CAACC2000B783FB /* day.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4EC880D22CAACC2000B783FB /* day.jpg */; };
+		4EC880D72CAACC2000B783FB /* Clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC880D12CAACC2000B783FB /* Clouds.png */; };
+		4EC880D82CAACC2000B783FB /* earth.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4EC880D32CAACC2000B783FB /* earth.dae */; };
+		4EC880D92CAACC2000B783FB /* Bump.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4EC880D02CAACC2000B783FB /* Bump.jpg */; };
 		4ED9757C2C94ECDE0054697E /* OnBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED9757B2C94ECDE0054697E /* OnBoard.swift */; };
 		4EDFFAF12CA1ADBA00E019FA /* vpn.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4EDFFAF02CA1AD4500E019FA /* vpn.mp4 */; };
 /* End PBXBuildFile section */
@@ -44,33 +45,58 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4E07E24C2CA97CB200A67FF5 /* TopAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlertView.swift; sourceTree = "<group>"; };
 		4E0CF4572C95F07C004BF4C9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		4E0CF4592C95F07D004BF4C9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		4E0CF4732C9602E2004BF4C9 /* ModelVPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelVPN.swift; sourceTree = "<group>"; };
 		4E0CF47D2C9763C7004BF4C9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4E0DF07A2CA846E4004B0317 /* stars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stars.jpg; sourceTree = "<group>"; };
 		4E209B712C92DA2200BA727D /* AddNewServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewServer.swift; sourceTree = "<group>"; };
 		4E2F87BC2C9F21DF007F0002 /* ModelMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMap.swift; sourceTree = "<group>"; };
 		4E3910412C90A440007C58AD /* molodorya.vpn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = molodorya.vpn.entitlements; sourceTree = "<group>"; };
 		4E3983752C88CF30001346C5 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		4E3983772C88D029001346C5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		4E4F80B62CA2E24500E4A4E8 /* texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = texture.jpg; path = "../../../../../../../Downloads/59-earth/textures/texture.jpg"; sourceTree = "<group>"; };
 		4E56EEB22C846C71004E28EC /* molodorya.vpn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = molodorya.vpn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E56EEB52C846C71004E28EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E56EEB72C846C71004E28EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4E56EEB92C846C71004E28EC /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
-		4E56EEBC2C846C71004E28EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E56EEBE2C846C73004E28EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E56EEC12C846C73004E28EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E56EEC32C846C73004E28EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E56EEC92C84FDA2004E28EC /* VPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPN.swift; sourceTree = "<group>"; };
-		4E5ACF7D2CA3478600D9E3DC /* night.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = night.jpg; path = ../../../../../../../.Trash/night.jpg; sourceTree = "<group>"; };
-		4E5ACF7F2CA3479E00D9E3DC /* earth.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; name = earth.dae; path = ../../../../../../../.Trash/earth.dae; sourceTree = "<group>"; };
-		4E67E3112CA41F6B0009522F /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clouds.png; path = "../../../../../../../Downloads/c7n8gttq5hxc-Earth/Maps/clouds.png"; sourceTree = "<group>"; };
-		4E88B5062CA53CC200AC5711 /* stars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = stars.jpg; path = ../../../../../../../Downloads/stars.jpg; sourceTree = "<group>"; };
 		4EBB0A972C9874220079F7F5 /* AddNewVPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewVPN.swift; sourceTree = "<group>"; };
+		4EC880D02CAACC2000B783FB /* Bump.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Bump.jpg; sourceTree = "<group>"; };
+		4EC880D12CAACC2000B783FB /* Clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clouds.png; sourceTree = "<group>"; };
+		4EC880D22CAACC2000B783FB /* day.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = day.jpg; sourceTree = "<group>"; };
+		4EC880D32CAACC2000B783FB /* earth.dae */ = {isa = PBXFileReference; lastKnownFileType = text.xml.dae; path = earth.dae; sourceTree = "<group>"; };
+		4EC880D42CAACC2000B783FB /* night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = night.png; sourceTree = "<group>"; };
 		4ED9757B2C94ECDE0054697E /* OnBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoard.swift; sourceTree = "<group>"; };
 		4EDFFAF02CA1AD4500E019FA /* vpn.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = vpn.mp4; path = ../../../../../Desktop/vpn.mp4; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		4E07E24A2CA97C4C00A67FF5 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				/Localized/Main.storyboard,
+			);
+			target = 4E56EEB12C846C71004E28EC /* molodorya.vpn */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		4E07E24B2CA97C4C00A67FF5 /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 4E56EEB02C846C71004E28EC /* Resources */;
+			membershipExceptions = (
+				Base.lproj/Main.storyboard,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		4E07E2492CA97C4C00A67FF5 /* Storyboard */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (4E07E24A2CA97C4C00A67FF5 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 4E07E24B2CA97C4C00A67FF5 /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Storyboard; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4E56EEAF2C846C71004E28EC /* Frameworks */ = {
@@ -100,6 +126,7 @@
 				4E56EEB92C846C71004E28EC /* Main.swift */,
 				4E3983752C88CF30001346C5 /* MainCell.swift */,
 				4E2F87BC2C9F21DF007F0002 /* ModelMap.swift */,
+				4E07E24C2CA97CB200A67FF5 /* TopAlertView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -135,12 +162,12 @@
 				4E56EEB52C846C71004E28EC /* AppDelegate.swift */,
 				4E56EEB72C846C71004E28EC /* SceneDelegate.swift */,
 				4ED9757B2C94ECDE0054697E /* OnBoard.swift */,
-				4EDFFAEF2CA1AD3800E019FA /* art.scnassets */,
+				4EDFFAEF2CA1AD3800E019FA /* Files.scnassets */,
 				4E0CF4762C9605B7004BF4C9 /* Main */,
 				4E209B732C92DB4C00BA727D /* AddNewServer */,
 				4E0CF4752C96059D004BF4C9 /* Model VPN */,
 				4E3983772C88D029001346C5 /* Extensions.swift */,
-				4E56EEBB2C846C71004E28EC /* Main.storyboard */,
+				4E07E2492CA97C4C00A67FF5 /* Storyboard */,
 				4E56EEBE2C846C73004E28EC /* Assets.xcassets */,
 				4E56EEC02C846C73004E28EC /* LaunchScreen.storyboard */,
 				4E56EEC32C846C73004E28EC /* Info.plist */,
@@ -159,17 +186,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4EDFFAEF2CA1AD3800E019FA /* art.scnassets */ = {
+		4EDFFAEF2CA1AD3800E019FA /* Files.scnassets */ = {
 			isa = PBXGroup;
 			children = (
-				4E5ACF7D2CA3478600D9E3DC /* night.jpg */,
-				4E67E3112CA41F6B0009522F /* clouds.png */,
-				4E88B5062CA53CC200AC5711 /* stars.jpg */,
-				4E5ACF7F2CA3479E00D9E3DC /* earth.dae */,
-				4E4F80B62CA2E24500E4A4E8 /* texture.jpg */,
+				4E0DF07A2CA846E4004B0317 /* stars.jpg */,
+				4EC880D02CAACC2000B783FB /* Bump.jpg */,
+				4EC880D12CAACC2000B783FB /* Clouds.png */,
+				4EC880D22CAACC2000B783FB /* day.jpg */,
+				4EC880D32CAACC2000B783FB /* earth.dae */,
+				4EC880D42CAACC2000B783FB /* night.png */,
 				4EDFFAF02CA1AD4500E019FA /* vpn.mp4 */,
 			);
-			path = art.scnassets;
+			path = Files.scnassets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +215,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4E07E2492CA97C4C00A67FF5 /* Storyboard */,
 			);
 			name = molodorya.vpn;
 			productName = molodorya.vpn;
@@ -209,7 +240,6 @@
 				};
 			};
 			buildConfigurationList = 4E56EEAD2C846C71004E28EC /* Build configuration list for PBXProject "molodorya.vpn" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -217,6 +247,7 @@
 				Base,
 			);
 			mainGroup = 4E56EEA92C846C71004E28EC;
+			preferredProjectObjectVersion = 56;
 			productRefGroup = 4E56EEB32C846C71004E28EC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,14 +263,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E56EEBF2C846C73004E28EC /* Assets.xcassets in Resources */,
-				4E88B5072CA53CC200AC5711 /* stars.jpg in Resources */,
 				4E56EEC22C846C73004E28EC /* Base in Resources */,
-				4E5ACF7E2CA3478600D9E3DC /* night.jpg in Resources */,
+				4EC880D52CAACC2000B783FB /* night.png in Resources */,
+				4EC880D62CAACC2000B783FB /* day.jpg in Resources */,
+				4EC880D72CAACC2000B783FB /* Clouds.png in Resources */,
+				4EC880D82CAACC2000B783FB /* earth.dae in Resources */,
+				4EC880D92CAACC2000B783FB /* Bump.jpg in Resources */,
 				4EDFFAF12CA1ADBA00E019FA /* vpn.mp4 in Resources */,
-				4E5ACF802CA3479E00D9E3DC /* earth.dae in Resources */,
-				4E4F80B72CA2E24500E4A4E8 /* texture.jpg in Resources */,
-				4E56EEBD2C846C71004E28EC /* Base in Resources */,
-				4E67E3122CA41F6B0009522F /* clouds.png in Resources */,
+				4E0DF07B2CA846E4004B0317 /* stars.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,20 +292,13 @@
 				4EBB0A982C9874220079F7F5 /* AddNewVPN.swift in Sources */,
 				4ED9757C2C94ECDE0054697E /* OnBoard.swift in Sources */,
 				4E3983762C88CF30001346C5 /* MainCell.swift in Sources */,
+				4E07E24D2CA97CB200A67FF5 /* TopAlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4E56EEBB2C846C71004E28EC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4E56EEBC2C846C71004E28EC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4E56EEC02C846C73004E28EC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -416,7 +440,7 @@
 				DEVELOPMENT_TEAM = 2HZH3XUR69;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = molodorya.vpn/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Gradient VPN";
+				INFOPLIST_KEY_CFBundleDisplayName = molodorya.vpn;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Ваша локация нужна для отображение вашей иконки на карте и подсчета расстояния.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -449,7 +473,7 @@
 				DEVELOPMENT_TEAM = 2HZH3XUR69;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = molodorya.vpn/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Gradient VPN";
+				INFOPLIST_KEY_CFBundleDisplayName = molodorya.vpn;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Ваша локация нужна для отображение вашей иконки на карте и подсчета расстояния.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

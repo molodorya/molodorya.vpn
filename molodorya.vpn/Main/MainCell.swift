@@ -68,8 +68,10 @@ class MainCell: UITableViewCell {
     
     
     
+    @available(iOS 13.0, *)
     @IBAction func onStatus(_ sender: UISwitch) {
         
+        Main.statusToggle = onVPN.isOn
       
         
     }

@@ -10,18 +10,15 @@ import CoreLocation
 import MapKit
 
 
-class ServerLocation: NSObject, MKAnnotation {
+class ServerLocation {
     var country: String?
     var city: String?
     var imgFlag: String?
-    var coordinate: CLLocationCoordinate2D
     
-    init(country: String, city: String, imgFlag: String, lat: CLLocationDegrees, long: CLLocationDegrees) {
+    init(country: String, city: String, imgFlag: String) {
         self.country = country
         self.city = city
         self.imgFlag = imgFlag
-        
-        coordinate = CLLocationCoordinate2DMake(lat, long)
     }
 }
 

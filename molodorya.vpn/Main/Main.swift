@@ -8,91 +8,67 @@
 import UIKit
 import NetworkExtension
 import AVKit
-
 import SceneKit
 
 
+class A {
+    var status = false
+}
 
+
+
+@available(iOS 13.0, *)
 class Main: UIViewController {
-    
-    static var addedServer: [NewVPN] = []
     
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var connect: UIButton!
-
-//    @IBOutlet weak var videoView: UIView!
-    
     @IBOutlet weak var tableView: UITableView!
     
+    
+    @IBOutlet weak var topAlertView: UIView!
+    @IBOutlet weak var topAlertLabel: UILabel!
+    @IBOutlet weak var topAlertConstrains: NSLayoutConstraint!
+
+    static var addedServer: [NewVPN] = []
+    static var statusToggle: Bool = true
     var player: AVPlayer!
     var avPlayerLayer: AVPlayerLayer!
+    var statusVPN = false
     
     @IBOutlet weak var sceneView: SCNView!
     var modelNode: SCNNode!
 
     
     
-    // MARK: - Создание 3D модели
-    func addSceneViewModel() {
-        
-        let scene = SCNScene()
-        sceneView.scene = scene
-        sceneView.backgroundColor = .clear
-        sceneView.allowsCameraControl = false
-        
-        // Загружаем модель
-        let modelScene = SCNScene(named: "earth.dae")
-        modelNode = modelScene?.rootNode.childNode(withName: "worldVPN", recursively: true)
-     
-        scene.rootNode.addChildNode(modelNode!)
-        
-    }
     
-    
-    // MARK: - Анимация 3D модели
-    func rotateModel(status: Bool) {
-        
-        let rotateAction = SCNAction.rotate(by: CGFloat.pi * 0.10, around: SCNVector3(0, 1, 0), duration: 1)
-        let repeatAction = SCNAction.repeatForever(rotateAction)
-        
-        if status == true {
-            modelNode.runAction(repeatAction)
-        } else {
-            modelNode.removeAllActions()
-        }
-        
-        
-    }
-
-    
-    let imgFlags = ["netherlands", "uae"]
+    let imgFlags = ["Нидерланды", "uae"]
     
     
     
     var servers = [
-        ServerLocation(country: "Netherlands", city: "Amsterdam", imgFlag: "netherlands", lat: 55, long: 22),
-        ServerLocation(country: "UAE (Premium)", city: "Dubai", imgFlag: "uae", lat: 25.20, long: 55.27)
+        ServerLocation(country: "Нидерланды", city: "Амстердам", imgFlag: "netherlands")
     ]
     
-    var users = [
-        UserLocation(name: "Netherlands", imageName: "netherlands", lat: 55, long: 22),
-        UserLocation(name: "UAE (Premium)", imageName: "uae", lat: 25.20, long: 55.27)
-    ]
+  
     
-    
-    var swithStatus = [true, false]
-    
+ 
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         addSceneViewModel()
+        
+        animationTopAlertView(isShow: true)
+        
+        getDataVPN().getDataFromJSON()
+        
+        checkStatusSwith()
         
         bottomView.roundCorners(corners: [.topLeft, .topRight], radius: 30)
         
         connect.layer.cornerRadius = 25
+        topAlertView.layer.cornerRadius = 30
         
         
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
@@ -115,6 +91,7 @@ class Main: UIViewController {
         }
         
         tableView.rowHeight = 70
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -126,8 +103,10 @@ class Main: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+       
     }
+    
+  
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -135,11 +114,33 @@ class Main: UIViewController {
     }
     
     
+    func checkStatusSwith() {
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [self] Timer in
+            if Main.statusToggle == true {
+                connect.isEnabled = true
+            } else {
+                let status = VPN().vpnManager.connection.status
+                
+                switch status {
+                case NEVPNStatus.connected:
+                    VPN().disconnectVPN()
+                    statusVPN = false
+                    rotateModel(status: false)
+                    self.connect.backgroundColor = .systemGray2
+                default:
+                    break
+                }
+                
+                connect.isEnabled = false
+            }
+        }
+    }
     
-    
-    var statusVPN = false
+   
     
     @IBAction func connect(_ sender: UIButton) {
+        
+        
         let generator = UIImpactFeedbackGenerator(style: .light)
         generator.prepare()
         
@@ -220,14 +221,73 @@ class Main: UIViewController {
     
     
     
+    // MARK: - Создание 3D модели
+    func addSceneViewModel() {
+        
+        let scene = SCNScene()
+        sceneView.scene = scene
+        sceneView.backgroundColor = .clear
+        sceneView.allowsCameraControl = false
+        
+        // Загружаем модель
+        let modelScene = SCNScene(named: "earth.dae")
+        modelNode = modelScene?.rootNode.childNode(withName: "earth", recursively: true)
+   
+     
+        scene.rootNode.addChildNode(modelNode!)
+        
+    }
+    
+    
+    // MARK: - Анимация 3D модели
+    func rotateModel(status: Bool) {
+        
+        let rotateAction = SCNAction.rotate(by: CGFloat.pi * 0.10, around: SCNVector3(0, 1, 0), duration: 1)
+        let repeatAction = SCNAction.repeatForever(rotateAction)
+        
+        if status == true {
+            modelNode.runAction(repeatAction)
+        } else {
+            modelNode.removeAllActions()
+        }
+        
+        
+    }
+
+    
+    // MARK: - Уведомление TopView
+    func animationTopAlertView(isShow: Bool) {
+        
+        self.view.layoutSubviews()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            UIView.animate(withDuration: 0.6) {
+              
+                self.topAlertConstrains.constant = 65
+                self.view.layoutSubviews()
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                    UIView.animate(withDuration: 0.6) {
+                        self.topAlertConstrains.constant = -100
+                        self.view.layoutSubviews()
+                    }
+                })
+            }
+        })
+        
+        self.view.layoutIfNeeded()
+    }
+    
 }
 
     
-    
 
 
 
 
+
+
+@available(iOS 13.0, *)
 extension Main: UITableViewDelegate, UITableViewDataSource {
     
     
@@ -236,11 +296,13 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
         return servers.count
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let headerView = view as? UITableViewHeaderFooterView else { return }
+        headerView.textLabel?.textColor = .white // any color
+    }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section:Int) -> String?
-    {
-        
-        return "Available servers"
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Доступные серверы"
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -251,29 +313,14 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "main", for: indexPath) as! MainCell
         
+        cell.country.text = servers[0].country
+        cell.city.text = servers[0].city
+        cell.picture.image = UIImage(named: servers[0].imgFlag!)
+        cell.onVPN.isOn = true
         
-        switch indexPath.row {
-        case 0:
-            cell.country.text = servers[0].country
-            cell.city.text = servers[0].city
-            cell.picture.image = UIImage(named: imgFlags[0])
-            cell.onVPN.isOn = swithStatus[0]
-            
-        case 1:
-            cell.country.text = servers[1].country
-            cell.city.text = servers[1].city
-            cell.picture.image = UIImage(named: imgFlags[1])
-            cell.onVPN.isOn = swithStatus[1]
-            cell.statusLabel.text = ""
-
-            
-            cell.hiddenServer.isHidden = false
-            cell.hiddenServer.alpha = 0.1
-            
-        default:
-            break
-            
-        }
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor(hexString: "1E1E1E")
+        cell.selectedBackgroundView = bgColorView
         
         return cell
     }

@@ -10,18 +10,18 @@ import Foundation
 
 
 
-struct AvailableVPN: Codable {
-    let country: Country
-}
-
- 
-struct Country: Codable {
-    let one, two, free, four, five, six, seven, eight, nine, ten: DataInfo
+struct DataVPN: Decodable {
+    let DataVPN: InfoVPN
+    let Message: String
 }
  
-struct DataInfo: Codable {
-    let username, ipAdress, sharedSecret, password: String
-    let nameVPN: String
+struct InfoVPN: Decodable {
+    let username: String
+    let ipAdress: String
+    let sharedSecret: String
+    let password: String
+    let country: String
+    let city: String
 }
 
 
@@ -36,8 +36,17 @@ class getDataVPN {
                guard error == nil else { return }
                
                do {
-                   let jsonVPN = try JSONDecoder().decode(AvailableVPN.self, from: data)
-                   print("jsonVPN \(jsonVPN)")
+                   let VPN = try JSONDecoder().decode(DataVPN.self, from: data)
+                   
+//                   connectNewVPN(username: VPN.DataVPN.username, serverAdress: VPN.DataVPN.ipAdress, sharedSecret: VPN.DataVPN.sharedSecret, password: VPN.DataVPN.password, nameVPN: VPN.DataVPN.password)
+                   
+                   
+                   DispatchQueue.main.async {
+//                       Main().topAlertLabel.text = "\(VPN.Message)"
+                   }
+                   
+                  
+                   
                 
                } catch let error {
                    print(error)

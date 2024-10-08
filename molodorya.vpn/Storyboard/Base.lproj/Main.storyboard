@@ -151,21 +151,44 @@
                                 <rect key="frame" x="0.0" y="0.0" width="402" height="474"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </sceneKitView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CT8-m5-Bzf">
+                                <rect key="frame" x="25" y="-100" width="352" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В данный момент VPN-соединение работает только по WiFi" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P18-XY-MAc">
+                                        <rect key="frame" x="25" y="0.0" width="302" height="80"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="P18-XY-MAc" secondAttribute="bottom" id="9EY-Qa-zKZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="P18-XY-MAc" secondAttribute="trailing" constant="25" id="N4P-2U-EcH"/>
+                                    <constraint firstItem="P18-XY-MAc" firstAttribute="leading" secondItem="CT8-m5-Bzf" secondAttribute="leading" constant="25" id="bfB-6Q-YPW"/>
+                                    <constraint firstAttribute="height" constant="80" id="nMj-D0-IMo"/>
+                                    <constraint firstItem="P18-XY-MAc" firstAttribute="top" secondItem="CT8-m5-Bzf" secondAttribute="top" id="vkE-DI-Vva"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NZF-35-Dh0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="11h-pn-CPk"/>
+                            <constraint firstItem="CT8-m5-Bzf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2a1-O2-z4K"/>
                             <constraint firstAttribute="bottom" secondItem="qnH-s7-fAM" secondAttribute="bottom" id="4jG-Xu-GOw"/>
+                            <constraint firstItem="CT8-m5-Bzf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-100" id="84D-rO-VaL"/>
                             <constraint firstItem="Yut-ki-ZfN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9g0-VT-BUW"/>
                             <constraint firstItem="qnH-s7-fAM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EDm-12-3aO"/>
                             <constraint firstItem="qnH-s7-fAM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I7y-jB-KIf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Yut-ki-ZfN" secondAttribute="bottom" constant="350" id="Ukr-Sc-2hE"/>
                             <constraint firstItem="Yut-ki-ZfN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VC9-Je-vLg"/>
+                            <constraint firstItem="CT8-m5-Bzf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="XRW-a8-Rc7"/>
                             <constraint firstItem="NZF-35-Dh0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bCD-a2-Oc9"/>
                             <constraint firstItem="Yut-ki-ZfN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cho-og-1eV"/>
                             <constraint firstItem="NZF-35-Dh0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="g0o-0J-LfL"/>
                             <constraint firstItem="qnH-s7-fAM" firstAttribute="top" secondItem="NZF-35-Dh0" secondAttribute="bottom" id="n43-F0-rce"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CT8-m5-Bzf" secondAttribute="trailing" constant="25" id="rqc-KR-cRX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vOW-Og-F8n"/>
@@ -174,6 +197,9 @@
                         <outlet property="connect" destination="g9V-5Y-sHw" id="9ke-st-hUR"/>
                         <outlet property="sceneView" destination="NZF-35-Dh0" id="gV2-1Q-lt0"/>
                         <outlet property="tableView" destination="8P2-8t-8g5" id="fia-Ag-LLa"/>
+                        <outlet property="topAlertConstrains" destination="84D-rO-VaL" id="eyB-r1-xdb"/>
+                        <outlet property="topAlertLabel" destination="P18-XY-MAc" id="rMO-sl-wml"/>
+                        <outlet property="topAlertView" destination="CT8-m5-Bzf" id="chA-Oe-sPy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
