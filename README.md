@@ -1,0 +1,10 @@
+<h1>SWIFT iOS VPN IPSec Application</h1>
+
+<h2>Политика Apple не позволяет выкладывать приложения по типу VPN с аккаунтов разработчиков, которые оформлены не на компанию или организацию, поэтому в данный момент приложение используется через TestFilght для семьи и близкого круга друзей.</h2>
+<h4>Ответ от Apple:
+Your VPN app was submitted by an Apple Developer Program account registered to an individual.<br>
+All VPN apps must be submitted from an Apple Developer Program account registered to a company or organization.</h4>
+ 
+
+
+ ![first](https://github.com/user-attachments/assets/2b9890d3-88ed-4b5f-9853-ab84ccbead50)
