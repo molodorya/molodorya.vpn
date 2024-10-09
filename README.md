@@ -1,6 +1,6 @@
 <h1>SWIFT iOS VPN IPSec Application</h1>
 
-<h2>Личный высокостростной VPN</h2>
+<h2>Личный высокоскоростной VPN</h2>
 
 
 
