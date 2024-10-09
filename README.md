@@ -3,12 +3,20 @@
 <h2>Личный высокостростной VPN</h2>
 
 
+
+![Снимок экрана 2024-10-09 в 21 03 51](https://github.com/user-attachments/assets/52214bcc-6ff9-45a4-bd5e-210650255b35)
+
+
+
+
+
+
 <h4>Использование</h4>
 http://www.molodorya.ru/videos/vpn.mp4 
 
 
 
-![Uploading Снимок экрана 2024-10-09 в 21.03.51.png…]()
+
 
 
 
