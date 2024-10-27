@@ -27,12 +27,12 @@ class VPN {
             
             let p = NEVPNProtocolIPSec()
             p.username = "vpnuser"
-            p.serverAddress = "185.103.255.104"
+            p.serverAddress = "8"
             p.authenticationMethod = NEVPNIKEAuthenticationMethod.sharedSecret
             
             let kcs = KeychainService()
-            kcs.save(key: "SHARED", value: "RJzDxhdsBZzSxK53UTCR")
-            kcs.save(key: "VPN_PASSWORD", value: "Tfgv8rzBdFzCzbn2")
+            kcs.save(key: "SHARED", value: "k")
+            kcs.save(key: "VPN_PASSWORD", value: "l")
             p.sharedSecretReference = kcs.load(key: "SHARED")
             p.passwordReference = kcs.load(key: "VPN_PASSWORD")
             p.useExtendedAuthentication = true
